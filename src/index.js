@@ -22,6 +22,7 @@ class Input extends React.Component {
         <label>
           <input
             type="text"
+            className="encrypted"
             value={this.state.value}
             onChange={this.handleChange}
             placeholder="encrypted string"
