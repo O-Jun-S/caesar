@@ -16,3 +16,17 @@ code {
   margin: 30px;
   width: 50%;
 }
+
+.ul {
+  list-style: none;
+}
+
+.result {
+  margin-left: 30px;
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+.element {
+  display: inline-block;
+}

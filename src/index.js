@@ -54,7 +54,41 @@ class Input extends React.Component {
 }
 
 
+class Result extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <p className="result">
+        key=1
+        <input
+          type="text"
+          value=""
+          placeholder="decrypted string"
+          readonly>
+        </input>
+      </p>
+    );
+  }
+}
+
+
 ReactDOM.render(
-  <Page/>,
+  <div>
+    <Page/>
+    {(() => {
+      const items = [];
+      for(let i=1; i<=5; i++) {
+        const list = [];
+        for(let j=1; j<=5; j++) {
+          list.push(<Result/>);
+        }
+        items.push(<li className="element">{list}</li>);
+      };
+      return <ul>{items}</ul>;
+    })()}
+  </div>,
   document.getElementById('root')
 );
