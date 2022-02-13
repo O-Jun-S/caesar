@@ -67,7 +67,8 @@ class Results extends React.Component {
     for(let i=1; i<=5; i++) {
       const list = [];
       for(let j=1; j<=5; j++) {
-        list.push(<Result i={5 * (i - 1) + j}/>);
+        const index = 5 * (i - 1) + j;
+        list.push(<Result i={index} value={this.state.results[index]}/>);
       }
       items.push(<li className="element">{list}</li>);
     };
@@ -83,12 +84,13 @@ class Result extends React.Component {
 
   render() {
     const i = this.props.i;
+    const value = this.props.value;
     return (
       <p className="result">
         key={i}
         <input
           type="text"
-          value=""
+          value={value}
           placeholder="decrypted string"
           readonly>
         </input>
