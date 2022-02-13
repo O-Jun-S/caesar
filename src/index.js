@@ -54,15 +54,38 @@ class Input extends React.Component {
 }
 
 
-class Result extends React.Component {
+class Results extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      results: Array(25).fill(""),
+    }
   }
 
   render() {
+    const items = [];
+    for(let i=1; i<=5; i++) {
+      const list = [];
+      for(let j=1; j<=5; j++) {
+        list.push(<Result i={5 * (i - 1) + j}/>);
+      }
+      items.push(<li className="element">{list}</li>);
+    };
+    return <ul>{items}</ul>;
+  }
+}
+
+
+class Result extends React.Component {
+  /*constructor(props) {
+    super(props);
+  }*/
+
+  render() {
+    const i = this.props.i;
     return (
       <p className="result">
-        key=1
+        key={i}
         <input
           type="text"
           value=""
@@ -78,17 +101,7 @@ class Result extends React.Component {
 ReactDOM.render(
   <div>
     <Page/>
-    {(() => {
-      const items = [];
-      for(let i=1; i<=5; i++) {
-        const list = [];
-        for(let j=1; j<=5; j++) {
-          list.push(<Result/>);
-        }
-        items.push(<li className="element">{list}</li>);
-      };
-      return <ul>{items}</ul>;
-    })()}
+    <Results/>
   </div>,
   document.getElementById('root')
 );
