@@ -78,10 +78,6 @@ class Results extends React.Component {
 
 
 class Result extends React.Component {
-  /*constructor(props) {
-    super(props);
-  }*/
-
   render() {
     const i = this.props.i;
     const value = this.props.value;
@@ -92,7 +88,7 @@ class Result extends React.Component {
           type="text"
           value={value}
           placeholder="decrypted string"
-          readonly>
+          readOnly>
         </input>
       </p>
     );
