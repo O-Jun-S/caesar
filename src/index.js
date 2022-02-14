@@ -17,7 +17,7 @@ const shift = (string, val) => {
 
       if(isCapital) {
         let new_code = code + val;
-        if(new_code >= 90) {
+        if(new_code > 90) {
           new_code -= 26;
         }
         return String.fromCharCode(new_code);
@@ -25,7 +25,7 @@ const shift = (string, val) => {
 
       else {
         let new_code = code + val;
-        if(new_code >= 122) {
+        if(new_code > 122) {
           new_code -= 26;
         }
         return String.fromCharCode(new_code);
