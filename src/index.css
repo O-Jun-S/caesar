@@ -32,3 +32,9 @@ code {
   display: inline-block;
   width: 50%;
 }
+
+.copyright {
+  position: absolute;
+  top: 30px;
+  right: 60px;
+}

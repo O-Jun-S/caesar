@@ -67,6 +67,7 @@ class Page extends React.Component {
         <Results
           results={this.state.results}
         />
+        <Copyright/>
       </div>
     )
   }
@@ -135,6 +136,11 @@ class Result extends React.Component {
       </p>
     );
   }
+}
+
+
+function Copyright(props) {
+  return <p className="copyright">© 2022 <a href="https://twitter.com/OJun46225932">Ojun</a></p>
 }
 
 
