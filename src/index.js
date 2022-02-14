@@ -2,6 +2,39 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+
+// stringをval個先へシフトさせる
+const shift = (string, val) => {
+  const lst = string.split("");
+
+  return lst.map(
+    (c) => {
+      const code = c.charCodeAt(0);
+      const isCapital = 65 <= code && code <= 90;
+
+      // 大文字でも小文字でもない時はそのまま返す
+      if(!isCapital && !(97 <= code && code <= 122)) return c;
+
+      if(isCapital) {
+        let new_code = code + val;
+        if(new_code >= 90) {
+          new_code -= 26;
+        }
+        return String.fromCharCode(new_code);
+      }
+
+      else {
+        let new_code = code + val;
+        if(new_code >= 122) {
+          new_code -= 26;
+        }
+        return String.fromCharCode(new_code);
+      }
+    }
+  ).join("");
+}
+
+
 class Page extends React.Component {
   constructor(props) {
     super(props);
@@ -16,6 +49,8 @@ class Page extends React.Component {
 
   onChange(value) {
     this.setState({value: value});
+    const results = Array(25).fill(value);
+    this.setState({results: results});
   }
 
   render() {
