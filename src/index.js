@@ -49,7 +49,10 @@ class Page extends React.Component {
 
   onChange(value) {
     this.setState({value: value});
-    const results = Array(25).fill(value);
+    let results = Array(25).fill("");
+    for(let i=0; i<25; i++) {
+      results[i] = shift(value, i+1);
+    }
     this.setState({results: results});
   }
 
