@@ -87,17 +87,13 @@ class Input extends React.Component {
   render() {
     const value = this.props.value;
     return (
-      <form>
-        <label>
-          <input
-            type="text"
-            className="encrypted"
-            value={value}
-            onChange={this.handleChange}
-            placeholder="encrypted string"
-          />
-        </label>
-      </form>
+      <input
+        type="text"
+        className="encrypted"
+        value={value}
+        onChange={this.handleChange}
+        placeholder="encrypted string"
+      />
     )
   }
 }
