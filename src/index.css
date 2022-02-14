@@ -17,16 +17,18 @@ code {
   width: 50%;
 }
 
-ul {
-  list-style: none;
-}
-
 .result {
   margin-left: 30px;
-  margin-bottom: 10px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   width: 50%;
 }
 
 .element {
   display: inline-block;
+}
+
+.decrypted {
+  display: inline-block;
+  width: 50%;
 }

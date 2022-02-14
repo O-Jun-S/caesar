@@ -64,15 +64,15 @@ class Results extends React.Component {
 
   render() {
     const items = [];
-    for(let i=1; i<=5; i++) {
-      const list = [];
-      for(let j=1; j<=5; j++) {
-        const index = 5 * (i - 1) + j;
-        list.push(<Result i={index} value={this.state.results[index]}/>);
-      }
-      items.push(<li className="element">{list}</li>);
-    };
-    return <ul>{items}</ul>;
+    // i*5-1は適当に決めた。ユニークであればよいので。
+    for(let i=1; i<=25; i++) {
+      items.push(<Result i={i} value={this.state.results[i-1]}/>);
+    }
+    return (
+      <div>
+        {items}
+      </div>
+    );
   }
 }
 
@@ -87,6 +87,7 @@ class Result extends React.Component {
         <input
           type="text"
           value={value}
+          className="decrypted"
           placeholder="decrypted string"
           readOnly>
         </input>
