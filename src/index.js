@@ -64,7 +64,6 @@ class Results extends React.Component {
 
   render() {
     const items = [];
-    // i*5-1は適当に決めた。ユニークであればよいので。
     for(let i=1; i<=25; i++) {
       items.push(<Result i={i} value={this.state.results[i-1]}/>);
     }
