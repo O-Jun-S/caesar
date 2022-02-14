@@ -18,7 +18,7 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://O-Jun-S.github.io/caesar/",
+  "homepage": "https://o-jun-s.github.io/caesar/",
   "eslintConfig": {
     "extends": [
       "react-app",
