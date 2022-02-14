@@ -8,6 +8,7 @@ class Page extends React.Component {
 
     this.state = {
       value: "",
+      results: Array(25).fill(""),
     };
 
     this.onChange = this.onChange.bind(this);
@@ -19,7 +20,16 @@ class Page extends React.Component {
 
   render() {
     return(
-      <Input value={this.state.value} onChange={this.onChange}/>
+      <div>
+        <Input
+          value={this.state.value}
+          onChange={this.onChange}
+        />
+
+        <Results
+          results={this.state.results}
+        />
+      </div>
     )
   }
 }
@@ -55,17 +65,11 @@ class Input extends React.Component {
 
 
 class Results extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      results: Array(25).fill(""),
-    }
-  }
-
   render() {
+    const results = this.props.results;
     const items = [];
     for(let i=1; i<=25; i++) {
-      items.push(<Result i={i} value={this.state.results[i-1]}/>);
+      items.push(<Result i={i} value={results[i-1]}/>);
     }
     return (
       <div>
@@ -99,7 +103,6 @@ class Result extends React.Component {
 ReactDOM.render(
   <div>
     <Page/>
-    <Results/>
   </div>,
   document.getElementById('root')
 );
