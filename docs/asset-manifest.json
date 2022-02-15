@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/caesar/static/css/main.7d6e7f4d.css",
-    "main.js": "/caesar/static/js/main.d8c29b6f.js",
+    "main.js": "/caesar/static/js/main.8f8aa2fe.js",
     "index.html": "/caesar/index.html",
     "main.7d6e7f4d.css.map": "/caesar/static/css/main.7d6e7f4d.css.map",
-    "main.d8c29b6f.js.map": "/caesar/static/js/main.d8c29b6f.js.map"
+    "main.8f8aa2fe.js.map": "/caesar/static/js/main.8f8aa2fe.js.map"
   },
   "entrypoints": [
     "static/css/main.7d6e7f4d.css",
-    "static/js/main.d8c29b6f.js"
+    "static/js/main.8f8aa2fe.js"
   ]
 }
